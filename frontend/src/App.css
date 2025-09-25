@@ -2,7 +2,8 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
 }
 
 .container {
@@ -36,7 +37,8 @@ header h1 {
   text-align: right;
 }
 
-.account, .role {
+.account,
+.role {
   background: rgba(255, 255, 255, 0.2);
   padding: 8px 16px;
   border-radius: 20px;
@@ -45,12 +47,18 @@ header h1 {
   backdrop-filter: blur(10px);
 }
 
-.contract-info, .balances, .action-section, .observer-section {
+.contract-info,
+.balances,
+.action-section,
+.observer-section {
   padding: 30px;
   border-bottom: 1px solid #eee;
 }
 
-.contract-info h2, .balances h2, .action-section h2, .observer-section h2 {
+.contract-info h2,
+.balances h2,
+.action-section h2,
+.observer-section h2 {
   color: #333;
   margin-bottom: 20px;
   font-size: 1.5rem;
@@ -59,13 +67,15 @@ header h1 {
   gap: 10px;
 }
 
-.info-grid, .balance-grid {
+.info-grid,
+.balance-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 15px;
 }
 
-.info-item, .balance-item {
+.info-item,
+.balance-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -76,19 +86,22 @@ header h1 {
   transition: all 0.3s ease;
 }
 
-.info-item:hover, .balance-item:hover {
+.info-item:hover,
+.balance-item:hover {
   border-color: #4facfe;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(79, 172, 254, 0.2);
 }
 
-.info-item label, .balance-item label {
+.info-item label,
+.balance-item label {
   font-weight: 600;
   color: #555;
 }
 
-.info-item span, .balance-item span {
-  font-family: 'Monaco', 'Menlo', monospace;
+.info-item span,
+.balance-item span {
+  font-family: "Monaco", "Menlo", monospace;
   background: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -119,7 +132,8 @@ header h1 {
   box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
 }
 
-.input-group button, .withdraw-btn {
+.input-group button,
+.withdraw-btn {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   color: white;
   border: none;
@@ -132,12 +146,14 @@ header h1 {
   box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
 }
 
-.input-group button:hover, .withdraw-btn:hover {
+.input-group button:hover,
+.withdraw-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
 }
 
-.input-group button:disabled, .withdraw-btn:disabled {
+.input-group button:disabled,
+.withdraw-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
@@ -204,19 +220,20 @@ footer {
   header {
     text-align: center;
   }
-  
+
   header h1 {
     font-size: 2rem;
   }
-  
-  .info-grid, .balance-grid {
+
+  .info-grid,
+  .balance-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .input-group {
     flex-direction: column;
   }
-  
+
   .input-group input {
     min-width: auto;
   }
@@ -224,12 +241,16 @@ footer {
 
 /* Loading animation */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 button:disabled::after {
-  content: '';
+  content: "";
   display: inline-block;
   width: 12px;
   height: 12px;

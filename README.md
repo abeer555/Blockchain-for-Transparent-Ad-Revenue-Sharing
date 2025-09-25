@@ -9,12 +9,14 @@ This project implements a smart contract that automatically splits ad revenue be
 ## 🏗️ Architecture
 
 ### Smart Contract Components
+
 - **Company**: The advertiser who deposits funds into the contract
 - **Platform**: The advertising platform (receives 30% by default)
 - **Creator**: The content creator (receives 70% by default)
 - **Automatic Split**: Funds are automatically distributed when deposited
 
 ### Key Features
+
 - ✅ **Transparent Revenue Sharing**: All transactions are recorded on the blockchain
 - ✅ **Automatic Distribution**: No manual intervention required for splitting funds
 - ✅ **Customizable Split Ratios**: Platform and creator percentages can be set during deployment
@@ -48,6 +50,7 @@ Blockchain-for-Transparent-Ad-Revenue-Sharing/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js (v14 or higher)
 - npm or yarn
 - MetaMask browser extension
@@ -94,6 +97,7 @@ npm run frontend
 ### 4. MetaMask Configuration
 
 1. Add the local network to MetaMask:
+
    - Network Name: `Hardhat Local`
    - RPC URL: `http://127.0.0.1:8545`
    - Chain ID: `1337`
@@ -104,6 +108,7 @@ npm run frontend
 ## 📊 Contract Details
 
 ### Default Configuration
+
 - **Platform Address**: `0x4B5d674dc94C44F13A30F306a49A7C9283e93A4F`
 - **Creator Address**: `0x212eb7D9494503C5779d009A0B9B4DaB9240A08C`
 - **Platform Share**: 30%
@@ -112,13 +117,16 @@ npm run frontend
 ### Smart Contract Functions
 
 #### For Company (Depositor)
+
 - `deposit()`: Deposit ad revenue (automatically splits funds)
 
 #### For Platform & Creator
+
 - `withdraw()`: Withdraw available balance
 - `checkBalance(address)`: Check balance for any address
 
 #### Public View Functions
+
 - `getContractInfo()`: Get all contract details
 - `balances(address)`: Check balance mapping
 - `company()`, `platform()`, `creator()`: Get participant addresses
@@ -127,6 +135,7 @@ npm run frontend
 ## 🧪 Testing
 
 The project includes comprehensive tests covering:
+
 - Contract deployment with various scenarios
 - Deposit functionality and automatic splitting
 - Withdrawal mechanics
@@ -140,6 +149,7 @@ npm run test
 ## 💻 Frontend Features
 
 The React frontend provides:
+
 - **MetaMask Integration**: Connect your wallet seamlessly
 - **Role Detection**: Automatically detects if you're Company, Platform, Creator, or Observer
 - **Real-time Balance Display**: See current balances for all participants
@@ -151,6 +161,7 @@ The React frontend provides:
 ## 📝 Usage Examples
 
 ### Depositing Funds (Company)
+
 ```javascript
 // Company deposits 1 ETH
 await contract.deposit({ value: ethers.parseEther("1.0") });
@@ -158,6 +169,7 @@ await contract.deposit({ value: ethers.parseEther("1.0") });
 ```
 
 ### Withdrawing Funds (Platform/Creator)
+
 ```javascript
 // Platform or Creator withdraws their balance
 await contract.withdraw();
@@ -165,11 +177,12 @@ await contract.withdraw();
 ```
 
 ### Checking Balances
+
 ```javascript
 // Check platform balance
 const platformBalance = await contract.checkBalance(platformAddress);
 
-// Check creator balance  
+// Check creator balance
 const creatorBalance = await contract.checkBalance(creatorAddress);
 ```
 
@@ -184,13 +197,38 @@ const creatorBalance = await contract.checkBalance(creatorAddress);
 ## 🌐 Deployment
 
 ### Local Development
+
 ```bash
 npm run node          # Start local blockchain
 npm run deploy        # Deploy to local network
 ```
 
+### Sepolia Testnet Deployment
+
+```bash
+# 1. Setup environment variables
+cp .env.example .env
+# Edit .env with your private key and RPC URL
+
+# 2. Get Sepolia ETH from faucets
+# Visit: https://sepoliafaucet.com/
+
+# 3. Deploy to Sepolia
+npm run deploy:sepolia
+
+# 4. Verify contract (optional)
+npm run verify:sepolia <CONTRACT_ADDRESS> "0x4B5d674dc94C44F13A30F306a49A7C9283e93A4F" "0x212eb7D9494503C5779d009A0B9B4DaB9240A08C" 30 70
+
+# 5. Test on Sepolia
+npm run demo:sepolia
+```
+
+📋 **See [SEPOLIA_DEPLOYMENT.md](./SEPOLIA_DEPLOYMENT.md) for detailed deployment guide.**
+
 ### Custom Networks
+
 Update `hardhat.config.js` with your network configuration and deploy:
+
 ```bash
 npx hardhat run scripts/deploy.js --network <network-name>
 ```
@@ -226,6 +264,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 📞 Support
 
 For questions or support:
+
 - Create an issue in this repository
 - Contact the development team
 - Check the documentation in the `/docs` folder
